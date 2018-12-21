@@ -1,7 +1,7 @@
 # 初めてのTypeScript
 
 ## 使い方
-- app.tsとREADME.md以外のファイルをダウンロードする.
+- app.jsとtsconfig.jsonとREADME.md以外のファイルをダウンロードする.
 - NodeJsをインストールする.
 - `$ npm install -g typescript`を実行して, npmからTypeScriptをダウンロードする.
 - `$ npm install`を実行して, npmパッケージをダウンロードする.
