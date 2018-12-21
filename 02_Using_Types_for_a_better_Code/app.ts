@@ -29,4 +29,14 @@ hobbies2 = [100]; // これはエラーにならない. 配列の中身の型が
 
 // tuples
 let address: [string, number] = ["Super", 99]; // これはエラーにならない.
-let address2: [number, string] = ["Suber", 99]; // これはエラーになる. 型の順番が違うので.
+// let address2: [number, string] = ["Suber", 99]; // これはエラーになる. 型の順番が違うので.
+
+// enum
+enum Color {
+  Gray, // 0
+  Green = 100, // 100
+  Blue, // 101
+  Red = 3 // 3
+}
+let myColor: Color = Color.Green;
+console.log(myColor); // 100 と表示
