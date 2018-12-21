@@ -15,6 +15,7 @@
     "@types/node": "^10.12.18"
   },
   "devDependencies": {
+    "lite-server": "^2.4.0",
     "typescript": "^3.2.2"
   }
 }
