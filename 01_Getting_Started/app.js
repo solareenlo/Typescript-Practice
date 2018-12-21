@@ -1,2 +1,1 @@
-"use strict";
-cappendonsole.log("Hello, World!");
+console.log("Hello, World!");
