@@ -17,12 +17,16 @@ myRealAge = '28'; // これはエラーにならない.
 
 let myRealAge2: number;
 myRealAge2 = 27;
-myRealAge2 = '27'; // これはエラーになる. 型を明示しているため.
+// myRealAge2 = '27'; // これはエラーになる. 型を明示しているため.
 
 // array
 let hobbies = ["Cooking", "Sports"];
-hobbies = [100]; // これはエラーになる. 配列の中身がString型では無いので.
+// hobbies = [100]; // これはエラーになる. 配列の中身がString型では無いので.
 
 let hobbies2: any[] = ["Cooking", "Sports"];
 hobbies2 = [100]; // これはエラーにならない. 配列の中身の型がanyになっているので.
-hobbies2 = 100; // これはエラーになる. 配列では無いので.
+// hobbies2 = 100; // これはエラーになる. 配列では無いので.
+
+// tuples
+let address: [string, number] = ["Super", 99]; // これはエラーにならない.
+let address2: [number, string] = ["Suber", 99]; // これはエラーになる. 型の順番が違うので.
