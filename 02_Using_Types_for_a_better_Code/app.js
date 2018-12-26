@@ -59,4 +59,10 @@ console.log(multiply(2, 3)); // 6 と表示
 let myMultiply;
 myMultiply = multiply;
 console.log(myMultiply(1, 2)); // 2 と表示
+// objects オブジェクトの中身の型も指定しよう
+let userData = {
+    name: 'sola',
+    age: 27
+};
+console.log(userData); // { name: 'sola', age: 27 } と表示
 //# sourceMappingURL=app.js.map
