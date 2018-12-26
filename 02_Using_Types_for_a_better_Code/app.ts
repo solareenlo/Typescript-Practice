@@ -113,3 +113,12 @@ if (typeof finalValue == "number") {
 function neverReturns(): never {
   throw new Error('An error!');
 }
+
+// Nullable Types
+// Nullの型チェックをTrueにすると, 明示的にNull型を指定する必要がある
+let canBeNull: number | null = 12;
+canBeNull = null;
+let canAlsoBeNull;
+canAlsoBeNull = null;
+let canThisBeAny: number | null = null;
+canThisBeAny = 12;

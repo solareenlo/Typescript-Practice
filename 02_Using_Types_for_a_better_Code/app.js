@@ -94,4 +94,11 @@ if (typeof finalValue == "number") {
 function neverReturns() {
     throw new Error('An error!');
 }
+// Nullable Types
+let canBeNull = 12;
+canBeNull = null;
+let canAlsoBeNull;
+canAlsoBeNull = null;
+let canThisBeAny = null;
+canThisBeAny = 12;
 //# sourceMappingURL=app.js.map
