@@ -101,3 +101,9 @@ console.log(complex2); // { data: [ 100, 3.99, 10 ], output: [Function: output] 
 let myRealRealAge: number | string = 27;
 myRealRealAge = '27';
 console.log(myRealRealAge); // 27 という文字列で表示
+
+// check types 型のチェックを行える
+let finalValue = 30;
+if (typeof finalValue == "number") {
+  console.log("Final value is a number.");
+}
