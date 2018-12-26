@@ -32,3 +32,9 @@ function printInfo2(...info: [string, number]): void {
   // My name is sola and I am 25 years old. と表示
 }
 printInfo2('sola', 25);
+
+// Destructuring
+console.log('DESTRUCTURING');
+const myHobbies: string[] = ['Cooking', 'Sports'];
+const [hobby1, hobby2]: string[] = myHobbies; // 自動で代入してくれる
+console.log(hobby1, hobby2); // Cooking Sports と表示
