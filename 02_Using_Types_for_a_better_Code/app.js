@@ -65,4 +65,12 @@ let userData = {
     age: 27
 };
 console.log(userData); // { name: 'sola', age: 27 } と表示
+// complex object 複雑なオブジェクトの書き方の例
+let complex = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+console.log(complex); // { data: [ 100, 3.99, 10 ], output: [Function: output] } と表示
 //# sourceMappingURL=app.js.map
