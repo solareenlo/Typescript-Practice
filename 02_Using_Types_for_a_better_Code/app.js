@@ -40,4 +40,19 @@ console.log(car); // car と表示
 car = { brand: "BMW", series: 3 };
 console.log(car); // { brand: 'BMW', series: 3 } と表示
 // carのtypeがanyなので, 色々な型を使用できる.
+// functions
+function returnMyname() {
+    return myName;
+}
+console.log(returnMyname()); // sola と表示
+// void 関数の返り値がないときはvoidを指定
+function sayHello() {
+    console.log('Hello');
+}
+sayHello(); // Hello と表示
+// argument types 関数の引数にも返り値にも型を指定する
+function multiply(value1, value2) {
+    return value1 * value2;
+}
+console.log(multiply(2, 3)); // 6 と表示
 //# sourceMappingURL=app.js.map
