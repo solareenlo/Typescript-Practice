@@ -107,3 +107,9 @@ let finalValue = 30;
 if (typeof finalValue == "number") {
   console.log("Final value is a number.");
 }
+
+// never 属する値が存在しない型
+// エラーで終わる時とか, 分岐処理で分岐しなかった時に使用する
+function neverReturns(): never {
+  throw new Error('An error!');
+}
