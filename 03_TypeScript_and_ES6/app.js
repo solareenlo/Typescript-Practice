@@ -9,3 +9,8 @@ const countdown = (start = 10) => {
     console.log("Done", start);
 };
 countdown();
+// Rest & Spread
+console.log("REST & SPREAD");
+const numbers = [1, 2, 10, -5];
+console.log(Math.max(33, 30, 99, -14));
+console.log(Math.max(...numbers));
