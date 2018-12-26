@@ -33,8 +33,18 @@ function printInfo2(...info: [string, number]): void {
 }
 printInfo2('sola', 25);
 
-// Destructuring
+// Destructuring 分割代入
+// 配列に分割代入使えます
 console.log('DESTRUCTURING');
 const myHobbies: string[] = ['Cooking', 'Sports'];
 const [hobby1, hobby2]: string[] = myHobbies; // 自動で代入してくれる
 console.log(hobby1, hobby2); // Cooking Sports と表示
+
+// objectにも分割代入使えます
+type UserData = { userName: string, age: number};
+const userData: UserData = {
+  userName: 'sola',
+  age: 27
+};
+const {userName: myName, age: myAge}: UserData = userData;
+console.log(myName, myAge); // sola 27 と表示
