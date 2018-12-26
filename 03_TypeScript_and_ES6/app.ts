@@ -48,3 +48,10 @@ const userData: UserData = {
 };
 const {userName: myName, age: myAge}: UserData = userData;
 console.log(myName, myAge); // sola 27 と表示
+
+// Template Literals
+const userName: string = 'sola';
+const greeting: string = `This is a heading!
+I'm ${userName}.
+This is a cool!`;
+console.log(greeting);
