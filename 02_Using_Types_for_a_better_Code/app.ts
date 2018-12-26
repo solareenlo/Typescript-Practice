@@ -86,3 +86,13 @@ let complex: {data: number[], output: (all: boolean) => number[]} = {
   }
 };
 console.log(complex); // { data: [ 100, 3.99, 10 ], output: [Function: output] } と表示
+
+// type alia typeをまとめて定義しておける
+type Complex = {data: number[], output: (all: boolean) => number[]};
+let complex2: Complex = {
+  data: [100, 3.99, 10],
+  output: function(all: boolean): number[] {
+    return this.data;
+  }
+};
+console.log(complex2); // { data: [ 100, 3.99, 10 ], output: [Function: output] } と表示

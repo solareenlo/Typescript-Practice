@@ -73,4 +73,11 @@ let complex = {
     }
 };
 console.log(complex); // { data: [ 100, 3.99, 10 ], output: [Function: output] } と表示
+let complex2 = {
+    data: [100, 3.99, 10],
+    output: function (all) {
+        return this.data;
+    }
+};
+console.log(complex2); // { data: [ 100, 3.99, 10 ], output: [Function: output] } と表示
 //# sourceMappingURL=app.js.map
