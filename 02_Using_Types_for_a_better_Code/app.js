@@ -34,4 +34,10 @@ var Color;
 })(Color || (Color = {}));
 let myColor = Color.Green;
 console.log(myColor); // 100 と表示
+// any
+let car = "BMW";
+console.log(car); // car と表示
+car = { brand: "BMW", series: 3 };
+console.log(car); // { brand: 'BMW', series: 3 } と表示
+// carのtypeがanyなので, 色々な型を使用できる.
 //# sourceMappingURL=app.js.map
