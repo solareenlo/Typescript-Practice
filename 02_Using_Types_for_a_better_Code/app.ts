@@ -96,3 +96,8 @@ let complex2: Complex = {
   }
 };
 console.log(complex2); // { data: [ 100, 3.99, 10 ], output: [Function: output] } と表示
+
+// union types 一つの変数に複数の型を指定できる
+let myRealRealAge: number | string = 27;
+myRealRealAge = '27';
+console.log(myRealRealAge); // 27 という文字列で表示
