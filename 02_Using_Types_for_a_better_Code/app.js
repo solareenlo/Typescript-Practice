@@ -55,4 +55,8 @@ function multiply(value1, value2) {
     return value1 * value2;
 }
 console.log(multiply(2, 3)); // 6 と表示
+// function types 関数をコピーするときも型を指定しよう
+let myMultiply;
+myMultiply = multiply;
+console.log(myMultiply(1, 2)); // 2 と表示
 //# sourceMappingURL=app.js.map
