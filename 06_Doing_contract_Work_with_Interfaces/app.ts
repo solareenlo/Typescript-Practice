@@ -42,3 +42,16 @@ myPerson.name = 'solasola';
 myPerson.lastName = 'Anything';
 greet(myPerson); // Hello, solasola. と表示
 myPerson.greet(myPerson.lastName); // Hi, I am solasola Anything. と表示
+
+
+// Function Types
+interface DoubleValueFunc {
+  (number1: number, number2: number): number;
+}
+
+let myDoubleFunction: DoubleValueFunc;
+myDoubleFunction = function(value1: number, value2: number) {
+  return (value1 + value2) * 2;
+};
+
+console.log(myDoubleFunction(4, 10)); // 28 と表示

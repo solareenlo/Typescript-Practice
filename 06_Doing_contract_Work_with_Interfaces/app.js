@@ -31,3 +31,8 @@ myPerson.name = 'solasola';
 myPerson.lastName = 'Anything';
 greet(myPerson); // Hello, solasola. と表示
 myPerson.greet(myPerson.lastName); // Hi, I am solasola Anything. と表示
+var myDoubleFunction;
+myDoubleFunction = function (value1, value2) {
+    return (value1 + value2) * 2;
+};
+console.log(myDoubleFunction(4, 10));
