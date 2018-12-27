@@ -18,3 +18,16 @@ changeName(person);
 greet(person); // Hello, Taro. と表示
 // greet({name: 'sola', age: 27}); // Hello, sola. と表示
 person.greet('Yamada'); // Hi, I am Taro Yamada. と表示
+var Person = /** @class */ (function () {
+    function Person() {
+    }
+    Person.prototype.greet = function (lastName) {
+        console.log("Hi, I am " + this.name + " " + lastName + ".");
+    };
+    return Person;
+}());
+var myPerson = new Person();
+myPerson.name = 'solasola';
+myPerson.lastName = 'Anything';
+greet(myPerson); // Hello, solasola. と表示
+myPerson.greet(myPerson.lastName); // Hi, I am solasola Anything. と表示
