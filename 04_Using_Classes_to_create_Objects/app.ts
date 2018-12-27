@@ -24,7 +24,7 @@ console.log(person.name, person.username); // sola Sola と表示
 person.printAge(); // 27 Old Guy を表示
 // person.setType('Cool guy'); // setTypeメソッドがprivateのため使えない
 
-// Inheritance
+// Inheritance 継承
 class Sola extends Person {
   // name = 'SOLA';
 
@@ -69,3 +69,26 @@ class Helpers {
 }
 console.log(2 * Helpers.PI); // 6.28 と表示
 console.log(Helpers.calcCircumference(10)); // 31.400000000000002 と表示
+
+// Abstract Classes 抽象クラス
+abstract class Project {
+  projectName: string = 'Default';
+  budget: number = 1000;
+
+  abstract changeName(name: string): void;
+
+  calcBudget(): number {
+    return this.budget * 2;
+  }
+}
+
+class ITProject extends Project {
+  changeName(name: string): void {
+    this.projectName = name;
+  }
+}
+
+let newProject = new ITProject();
+console.log(newProject); // ITProject { projectName: 'Default', budget: 1000 } と表示
+newProject.changeName('Super IT Project');
+console.log(newProject); // ITProject { projectName: 'Super IT Project', budget: 1000 } と表示
