@@ -1,3 +1,4 @@
+// class
 class Person {
   name: string;
   private type!: string;
@@ -23,6 +24,7 @@ console.log(person); // Person { username: 'Sola', age: 27, name: 'sola' } と�
 console.log(person.name, person.username); // sola Sola と表示
 person.printAge(); // 27 Old Guy を表示
 // person.setType('Cool guy'); // setTypeメソッドがprivateのため使えない
+
 
 // Inheritance 継承
 class Sola extends Person {
@@ -60,6 +62,7 @@ console.log(plant.species); // Default と表示
 plant.species = 'Green Plant';
 console.log(plant.species); // Green Plant と表示
 
+
 // Static Properties & Methods
 class Helpers {
   static PI: number = 3.14;
@@ -70,12 +73,13 @@ class Helpers {
 console.log(2 * Helpers.PI); // 6.28 と表示
 console.log(Helpers.calcCircumference(10)); // 31.400000000000002 と表示
 
+
 // Abstract Classes 抽象クラス
 abstract class Project {
   projectName: string = 'Default';
   budget: number = 1000;
 
-  abstract changeName(name: string): void;
+  abstract changeName(name: string): void; // 抽象メソッド
 
   calcBudget(): number {
     return this.budget * 2;

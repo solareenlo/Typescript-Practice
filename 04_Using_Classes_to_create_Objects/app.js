@@ -1,4 +1,5 @@
 "use strict";
+// class
 class Person {
     constructor(name, username) {
         this.username = username;
