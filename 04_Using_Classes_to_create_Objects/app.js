@@ -52,3 +52,12 @@ plant.species = 'AB';
 console.log(plant.species); // Default と表示
 plant.species = 'Green Plant';
 console.log(plant.species); // Green Plant と表示
+// Static Properties & Methods
+class Helpers {
+    static calcCircumference(diameter) {
+        return this.PI * diameter;
+    }
+}
+Helpers.PI = 3.14;
+console.log(2 * Helpers.PI); // 6.28 と表示
+console.log(Helpers.calcCircumference(10)); // 31.4 と表示
