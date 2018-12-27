@@ -1,15 +1,7 @@
-namespace MyMath {
-  const PI: number = 3.14;
-
-  export function calCircumference(diameter: number): number {
-    return diameter * PI;
-  }
-
-  export function calRectangle(width: number, height: number): number {
-    return width * height;
-  }
-}
-
+// コンパイルするときは,
+// $ tsc --outFile app.js circle.ts rectangle.ts app.ts --types node
+// .tsファイルの入力順番を間違えないこと.
+// .tsファイルを入力した順番にコンパルされたjsコードがapp.jsに追加されます.
 const PI: number = 2.23847928374;
 
 console.log(MyMath.calCircumference(10)); // 31.400000000000002 と表示
