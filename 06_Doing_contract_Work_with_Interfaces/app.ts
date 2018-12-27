@@ -55,3 +55,19 @@ myDoubleFunction = function(value1: number, value2: number) {
 };
 
 console.log(myDoubleFunction(4, 10)); // 28 と表示
+
+
+// Interface Inheritance
+interface AgedPerson extends NamedPerson {
+  age: number;
+}
+
+const oldPerson: AgedPerson = {
+  age: 30,
+  name: 'sola',
+  greet(lastName: string) {
+    console.log('Hello!');
+  }
+};
+
+console.log(oldPerson); // { age: 30, name: 'sola', greet: [Function: greet] } と表示

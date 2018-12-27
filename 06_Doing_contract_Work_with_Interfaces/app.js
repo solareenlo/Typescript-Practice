@@ -35,4 +35,12 @@ var myDoubleFunction;
 myDoubleFunction = function (value1, value2) {
     return (value1 + value2) * 2;
 };
-console.log(myDoubleFunction(4, 10));
+console.log(myDoubleFunction(4, 10)); // 28 と表示
+var oldPerson = {
+    age: 30,
+    name: 'sola',
+    greet: function (lastName) {
+        console.log('Hello!');
+    }
+};
+console.log(oldPerson); // { age: 30, name: 'sola', greet: [Function: greet] } と表示
