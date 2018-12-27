@@ -96,3 +96,21 @@ let newProject = new ITProject();
 console.log(newProject); // ITProject { projectName: 'Default', budget: 1000 } と表示
 newProject.changeName('Super IT Project');
 console.log(newProject); // ITProject { projectName: 'Super IT Project', budget: 1000 } と表示
+
+
+// private constructors
+class OnlyOne {
+  private static instance: OnlyOne;
+
+  private constructor(public name: string) {}
+
+  static getInstance() {
+    if(!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne('The Only One');
+    }
+    return OnlyOne.instance;
+  }
+}
+
+// let wrong = new OnlyOne('The Only One');
+let right = OnlyOne.getInstance();
