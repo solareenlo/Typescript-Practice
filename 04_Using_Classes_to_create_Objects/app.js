@@ -29,3 +29,26 @@ class Sola extends Person {
 }
 const sola = new Sola('Taro');
 console.log(sola); // Sola { username: 'Taro', age: 32, name: 'SOLA' } と表示
+// Getters & Setters
+class Plant {
+    constructor() {
+        this._species = 'Default';
+    }
+    get species() {
+        return this._species;
+    }
+    set species(value) {
+        if (value.length > 3) {
+            this._species = value;
+        }
+        else {
+            this._species = 'Default';
+        }
+    }
+}
+let plant = new Plant();
+console.log(plant.species); // Default と表示
+plant.species = 'AB';
+console.log(plant.species); // Default と表示
+plant.species = 'Green Plant';
+console.log(plant.species); // Green Plant と表示
