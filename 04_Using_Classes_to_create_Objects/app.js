@@ -24,7 +24,8 @@ class Sola extends Person {
     // name = 'SOLA';
     constructor(username) {
         super('Sola', username);
+        this.age = 32;
     }
 }
 const sola = new Sola('Taro');
-console.log(sola); // Sola { username: 'Taro', age: 27, name: 'SOLA' } と表示
+console.log(sola); // Sola { username: 'Taro', age: 32, name: 'SOLA' } と表示
