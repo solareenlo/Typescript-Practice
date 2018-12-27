@@ -102,6 +102,8 @@ console.log(newProject); // ITProject { projectName: 'Super IT Project', budget:
 class OnlyOne {
   private static instance: OnlyOne;
 
+  // コンストラクタはプライベートだけどnameはpublicなので,
+  // 外部からnameにアクセスできる.
   private constructor(public name: string) {}
 
   static getInstance() {
@@ -114,3 +116,6 @@ class OnlyOne {
 
 // let wrong = new OnlyOne('The Only One');
 let right = OnlyOne.getInstance();
+console.log(right.name); // The Only One と表示
+right.name = 'Something else';
+console.log(right.name); // Something else と表示

@@ -83,6 +83,8 @@ newProject.changeName('Super IT Project');
 console.log(newProject); // ITProject { projectName: 'Super IT Project', budget: 1000 } と表示
 // private constructors
 class OnlyOne {
+    // コンストラクタはプライベートだけどnameはpublicなので,
+    // 外部からnameにアクセスできる.
     constructor(name) {
         this.name = name;
     }
@@ -95,3 +97,6 @@ class OnlyOne {
 }
 // let wrong = new OnlyOne('The Only One');
 let right = OnlyOne.getInstance();
+console.log(right.name); // The Only One と表示
+right.name = 'Something else';
+console.log(right.name); // Something else と表示
