@@ -2,7 +2,6 @@
 function echo<T>(data: T) {
   return data;
 };
-
 console.log(echo('sola').length); // 4 と表示
 console.log(echo<number>(27)); // 27 と表示
 console.log(echo({name: 'sola', age: 27})); // { name: 'sola', age: 27 } と表示
@@ -24,3 +23,17 @@ printAll<string>(['Apple', 'Banana']); // Apple Banana と表示
 // Generic Types
 const echo2: <T>(data: T) => T = echo;
 console.log(echo2<string>('Something')); // Something と表示
+
+
+// Generic Class
+class SimpleMath<T> {
+  baseValue!: T;
+  multiplyValue!: T;
+  calculate(): number {
+    return +this.baseValue * +this.multiplyValue;
+  }
+}
+const simpleMath = new SimpleMath();
+simpleMath.baseValue = 10;
+simpleMath.multiplyValue = 30;
+console.log(simpleMath.calculate());

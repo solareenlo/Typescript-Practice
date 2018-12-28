@@ -19,3 +19,13 @@ printAll(['Apple', 'Banana']); // Apple Banana と表示
 // Generic Types
 const echo2 = echo;
 console.log(echo2('Something')); // Something と表示
+// Generic Class
+class SimpleMath {
+    calculate() {
+        return +this.baseValue * +this.multiplyValue;
+    }
+}
+const simpleMath = new SimpleMath();
+simpleMath.baseValue = 10;
+simpleMath.multiplyValue = 30;
+console.log(simpleMath.calculate());
