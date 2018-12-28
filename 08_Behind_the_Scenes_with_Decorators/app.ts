@@ -71,3 +71,33 @@ const project = new Project('Super Project');
 project.calcBudget(); // 1000 と表示
 project.calcBudget = () => console.log(2000);
 project.calcBudget(); // 2000 と表示
+
+
+// Parameter Decorator
+function printInfo(target: any, methodName: string, paramIndex: number) {
+  console.log('Target: ', target);
+  console.log('methodName: ', methodName);
+  console.log('paramIndex: ', paramIndex);
+}
+
+class Course {
+  name!: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  printStudentNumbers(mode: string, @printInfo printAll: boolean) {
+    // @printInfoを使うことで,
+    // Target:  Course {}
+    // methodName:  printStudentNumbers
+    // paramIndex:  1 と表示される
+    if (printAll) {
+      console.log(1000);
+    } else {
+      console.log(200);
+    }
+  }
+}
+
+const course = new Course('Super Course');
+course.printStudentNumbers('anything', true); // 1000 と表示
+course.printStudentNumbers('anything', false); // 200 と表示
