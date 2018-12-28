@@ -16,3 +16,6 @@ function printAll(args) {
     args.forEach((element) => console.log(element));
 }
 printAll(['Apple', 'Banana']); // Apple Banana と表示
+// Generic Types
+const echo2 = echo;
+console.log(echo2('Something')); // Something と表示

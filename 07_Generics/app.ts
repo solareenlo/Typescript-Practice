@@ -19,3 +19,8 @@ function printAll<T>(args: T[]) {
   args.forEach((element) => console.log(element));
 }
 printAll<string>(['Apple', 'Banana']); // Apple Banana と表示
+
+
+// Generic Types
+const echo2: <T>(data: T) => T = echo;
+console.log(echo2<string>('Something')); // Something と表示
