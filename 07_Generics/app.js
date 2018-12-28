@@ -28,4 +28,14 @@ class SimpleMath {
 const simpleMath = new SimpleMath();
 simpleMath.baseValue = 10;
 simpleMath.multiplyValue = 30;
-console.log(simpleMath.calculate());
+console.log(simpleMath.calculate()); // 300 と表示
+// Generic Constraints ジェネリクスに制約を与えられる
+class SimpleMath2 {
+    calculate() {
+        return +this.baseValue * +this.multiplyValue;
+    }
+}
+const simpleMath2 = new SimpleMath2();
+simpleMath2.baseValue = '10';
+simpleMath2.multiplyValue = '30';
+console.log(simpleMath2.calculate()); // 300 と表示
