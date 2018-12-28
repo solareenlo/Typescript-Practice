@@ -38,17 +38,28 @@ const plant = new Plant();
 (<any>plant).print();
 
 
-// Method Decorator
+// Method Decorator 関数の書き込み許可を制御する
 function editable(value: boolean) {
   return function(target: any, propName: string, descriptor: PropertyDescriptor) {
     descriptor.writable = value;
   }
 }
 
+// Property Decorator プロパティの書き込み許可を制御する
+function overwritable(value: boolean) {
+  return function (target: any, propName: string): any {
+    const newDescriptor: PropertyDescriptor = {
+      writable: value
+    };
+    return newDescriptor;
+  }
+}
+
 class Project {
+  @overwritable(true) // falseにするとpropertyが書き込み禁止になる.
   projectName!: string;
   constructor(name: string) {
-    this.projectName = name;
+    this.projectName = name; // @overwritalbe(false) だとここでエラーになる.
   }
   @editable(true) // ここでcalcBudgetを書き換え可能かどうかを判定する
   calcBudget(): void {
@@ -57,6 +68,6 @@ class Project {
 }
 
 const project = new Project('Super Project');
-project.calcBudget();
+project.calcBudget(); // 1000 と表示
 project.calcBudget = () => console.log(2000);
-project.calcBudget();
+project.calcBudget(); // 2000 と表示

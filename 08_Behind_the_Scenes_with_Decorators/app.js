@@ -23,13 +23,10 @@ function logging(value) {
         value ? logged : null;
     };
 }
-let Car = 
-// tsc実行時にエラーが出るけど[Function: Car]と表示されます.
-class Car {
+let Car = class Car {
 };
 Car = __decorate([
     logging(true) // [Function: Car] と表示
-    // tsc実行時にエラーが出るけど[Function: Car]と表示されます.
 ], Car);
 // Advanced
 function printable(constructorFn) {
@@ -49,24 +46,36 @@ Plant = __decorate([
 ], Plant);
 const plant = new Plant();
 plant.print();
-// Method Decorator
+// Method Decorator 関数の書き込み許可を制御する
 function editable(value) {
     return function (target, propName, descriptor) {
         descriptor.writable = value;
     };
 }
+// Property Decorator プロパティの書き込み許可を制御する
+function overwritable(value) {
+    return function (target, propName) {
+        const newDescriptor = {
+            writable: value
+        };
+        return newDescriptor;
+    };
+}
 class Project {
     constructor(name) {
-        this.projectName = name;
+        this.projectName = name; // @overwritalbe(false) だとここでエラーになる.
     }
     calcBudget() {
         console.log(1000);
     }
 }
 __decorate([
+    overwritable(true) // falseにするとpropertyが書き込み禁止になる.
+], Project.prototype, "projectName", void 0);
+__decorate([
     editable(true) // ここでcalcBudgetを書き換え可能かどうかを判定する
 ], Project.prototype, "calcBudget", null);
 const project = new Project('Super Project');
-project.calcBudget();
+project.calcBudget(); // 1000 と表示
 project.calcBudget = () => console.log(2000);
-project.calcBudget();
+project.calcBudget(); // 2000 と表示
