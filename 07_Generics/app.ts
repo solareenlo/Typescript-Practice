@@ -51,3 +51,17 @@ const simpleMath2 = new SimpleMath2<string>();
 simpleMath2.baseValue = '10';
 simpleMath2.multiplyValue = '30';
 console.log(simpleMath2.calculate()); // 300 と表示
+
+
+// Generic Constraints ジェネリクスにさらなる制約を与える
+class SimpleMath3<T extends number | string, U extends number | string> {
+  baseValue!: T; // こちらはTの条件で,
+  multiplyValue!: U; // こちらはUの条件を持つ.
+  calculate(): number {
+    return +this.baseValue * +this.multiplyValue;
+  }
+}
+const simpleMath3 = new SimpleMath3<string, number>();
+simpleMath3.baseValue = '10';
+simpleMath3.multiplyValue = 30;
+console.log(simpleMath3.calculate()); // 300 と表示

@@ -39,3 +39,13 @@ const simpleMath2 = new SimpleMath2();
 simpleMath2.baseValue = '10';
 simpleMath2.multiplyValue = '30';
 console.log(simpleMath2.calculate()); // 300 と表示
+// Generic Constraints ジェネリクスにさらなる制約を与える
+class SimpleMath3 {
+    calculate() {
+        return +this.baseValue * +this.multiplyValue;
+    }
+}
+const simpleMath3 = new SimpleMath3();
+simpleMath3.baseValue = '10';
+simpleMath3.multiplyValue = 30;
+console.log(simpleMath3.calculate()); // 300 と表示
