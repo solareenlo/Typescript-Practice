@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 // loggedがPersonを包み込む.
 function logged(constructorFn) {
-    console.log(constructorFn); // [Function: Person] と表示
+    console.log(constructorFn);
 }
 let Person = class Person {
     constructor() {
@@ -15,17 +15,19 @@ let Person = class Person {
     }
 };
 Person = __decorate([
-    logged
+    logged // [Function: Person] と表示
 ], Person);
 // Decorator Factories
 function logging(value) {
-    return value ? logged : null; // [Function: Car] と表示
-    // tsc実行時にエラーが出るけど[Function: Car]と表示されます.
+    return value ? logged : null;
 }
-let Car = class Car {
+let Car = 
+// tsc実行時にエラーが出るけど[Function: Car]と表示されます.
+class Car {
 };
 Car = __decorate([
-    logging(true)
+    logging(true) // [Function: Car] と表示
+    // tsc実行時にエラーが出るけど[Function: Car]と表示されます.
 ], Car);
 // Advanced
 function printable(constructorFn) {
@@ -39,7 +41,9 @@ let Plant = class Plant {
     }
 };
 Plant = __decorate([
-    printable
+    logging(true) // [Function: Plant] と表示
+    ,
+    printable // Plant { name: 'Green Plant' } と表示
 ], Plant);
 const plant = new Plant();
-plant.print(); // Plant { name: 'Green Plant' } と表示
+plant.print();

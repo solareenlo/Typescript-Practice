@@ -1,9 +1,9 @@
 // loggedがPersonを包み込む.
 function logged(constructorFn: Function) {
-  console.log(constructorFn); // [Function: Person] と表示
+  console.log(constructorFn);
 }
 
-@logged
+@logged // [Function: Person] と表示
 class Person {
   constructor() {
     console.log('Hi!');
@@ -13,11 +13,11 @@ class Person {
 
 // Decorator Factories
 function logging(value: boolean) {
-  return value ? logged : null; // [Function: Car] と表示
-  // tsc実行時にエラーが出るけど[Function: Car]と表示されます.
+  return value ? logged : null;
 }
 
-@logging(true)
+@logging(true) // [Function: Car] と表示
+// tsc実行時にエラーが出るけど[Function: Car]と表示されます.
 class Car {}
 
 
@@ -28,9 +28,10 @@ function printable(constructorFn: Function) {
   }
 }
 
-@printable
+@logging(true) // [Function: Plant] と表示
+@printable // Plant { name: 'Green Plant' } と表示
 class Plant {
   name: string = 'Green Plant';
 }
 const plant = new Plant();
-(<any>plant).print(); // Plant { name: 'Green Plant' } と表示
+(<any>plant).print();
