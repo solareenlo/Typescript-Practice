@@ -17,3 +17,12 @@ let Person = class Person {
 Person = __decorate([
     logged
 ], Person);
+// Decorator Factories
+function logging(value) {
+    return value ? logged : null; //
+}
+let Car = class Car {
+};
+Car = __decorate([
+    logging(true)
+], Car);
