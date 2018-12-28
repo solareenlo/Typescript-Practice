@@ -47,3 +47,24 @@ Plant = __decorate([
 ], Plant);
 const plant = new Plant();
 plant.print();
+// Method Decorator
+function editable(value) {
+    return function (target, propName, descriptor) {
+        descriptor.writable = value;
+    };
+}
+class Project {
+    constructor(name) {
+        this.projectName = name;
+    }
+    calcBudget() {
+        console.log(1000);
+    }
+}
+__decorate([
+    editable(true)
+], Project.prototype, "calcBudget", null);
+const project = new Project('Super Project');
+project.calcBudget();
+project.calcBudget = () => console.log(2000);
+project.calcBudget();

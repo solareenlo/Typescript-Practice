@@ -35,3 +35,27 @@ class Plant {
 }
 const plant = new Plant();
 (<any>plant).print();
+
+
+// Method Decorator
+function editable(value: boolean) {
+  return function(target: any, propName: string, descriptor: PropertyDescriptor) {
+    descriptor.writable = value;
+  }
+}
+
+class Project {
+  projectName!: string;
+  constructor(name: string) {
+    this.projectName = name;
+  }
+  @editable(true) // ここでcalcBudgetを書き換え可能かどうかを判定する
+  calcBudget(): void {
+    console.log(1000);
+  }
+}
+
+const project = new Project('Super Project');
+project.calcBudget();
+project.calcBudget = () => console.log(2000);
+project.calcBudget();
