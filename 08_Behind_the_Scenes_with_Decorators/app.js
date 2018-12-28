@@ -19,10 +19,27 @@ Person = __decorate([
 ], Person);
 // Decorator Factories
 function logging(value) {
-    return value ? logged : null; //
+    return value ? logged : null; // [Function: Car] と表示
+    // tsc実行時にエラーが出るけど[Function: Car]と表示されます.
 }
 let Car = class Car {
 };
 Car = __decorate([
     logging(true)
 ], Car);
+// Advanced
+function printable(constructorFn) {
+    constructorFn.prototype.print = function () {
+        console.log(this);
+    };
+}
+let Plant = class Plant {
+    constructor() {
+        this.name = 'Green Plant';
+    }
+};
+Plant = __decorate([
+    printable
+], Plant);
+const plant = new Plant();
+plant.print(); // Plant { name: 'Green Plant' } と表示

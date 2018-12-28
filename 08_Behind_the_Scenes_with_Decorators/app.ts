@@ -19,3 +19,18 @@ function logging(value: boolean) {
 
 @logging(true)
 class Car {}
+
+
+// Advanced
+function printable(constructorFn: Function) {
+  constructorFn.prototype.print = function() {
+    console.log(this);
+  }
+}
+
+@printable
+class Plant {
+  name: string = 'Green Plant';
+}
+const plant = new Plant();
+(<any>plant).print(); // Plant { name: 'Green Plant' } と表示
