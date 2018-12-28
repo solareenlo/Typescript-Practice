@@ -10,4 +10,9 @@ console.log(echo({ name: 'sola', age: 27 })); // { name: 'sola', age: 27 } と�
 // Built-in Generics
 const testResults = [1.92, 3.33];
 testResults.push(-1.23);
-console.log(testResults);
+console.log(testResults); // [ 1.92, 3.33, -1.23 ] と表示
+// Arrays
+function printAll(args) {
+    args.forEach((element) => console.log(element));
+}
+printAll(['Apple', 'Banana']); // Apple Banana と表示

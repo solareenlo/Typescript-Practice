@@ -12,3 +12,10 @@ console.log(echo({name: 'sola', age: 27})); // { name: 'sola', age: 27 } と表�
 const testResults: Array<number> = [1.92, 3.33];
 testResults.push(-1.23);
 console.log(testResults); // [ 1.92, 3.33, -1.23 ] と表示
+
+
+// Arrays
+function printAll<T>(args: T[]) {
+  args.forEach((element) => console.log(element));
+}
+printAll<string>(['Apple', 'Banana']); // Apple Banana と表示
