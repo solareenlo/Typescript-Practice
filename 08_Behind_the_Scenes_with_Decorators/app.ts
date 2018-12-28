@@ -13,11 +13,12 @@ class Person {
 
 // Decorator Factories
 function logging(value: boolean) {
-  return value ? logged : null;
+  return function(target: any) {
+    value ? logged : null
+  };
 }
 
 @logging(true) // [Function: Car] と表示
-// tsc実行時にエラーが出るけど[Function: Car]と表示されます.
 class Car {}
 
 

@@ -19,7 +19,9 @@ Person = __decorate([
 ], Person);
 // Decorator Factories
 function logging(value) {
-    return value ? logged : null;
+    return function (target) {
+        value ? logged : null;
+    };
 }
 let Car = 
 // tsc実行時にエラーが出るけど[Function: Car]と表示されます.
@@ -62,7 +64,7 @@ class Project {
     }
 }
 __decorate([
-    editable(true)
+    editable(true) // ここでcalcBudgetを書き換え可能かどうかを判定する
 ], Project.prototype, "calcBudget", null);
 const project = new Project('Super Project');
 project.calcBudget();
