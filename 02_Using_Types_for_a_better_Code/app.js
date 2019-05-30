@@ -95,6 +95,7 @@ function neverReturns() {
     throw new Error('An error!');
 }
 // Nullable Types
+// Nullの型チェックをTrueにすると, 明示的にNull型を指定する必要がある
 let canBeNull = 12;
 canBeNull = null;
 let canAlsoBeNull;
